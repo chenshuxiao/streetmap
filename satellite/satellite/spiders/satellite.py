@@ -1,6 +1,7 @@
 from io import BytesIO
 from PIL import Image
 import scrapy
+import os
 
 
 # API key for Google Maps.
@@ -16,6 +17,9 @@ class satellite(scrapy.Spider):
         # Read map points.
         with open('geo_points.dat') as f:
             points = [_.split(',') for _ in f.read().split('\n') if _]
+
+        # See if the directory exists.
+        if not os.path.isdir('crawled'): os.mkdir('crawled')
 
         # Construct URLs.
         urls = [{
