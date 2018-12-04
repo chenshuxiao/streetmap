@@ -39,3 +39,4 @@ Thumbs.db
 # Notebook Checkpoints #
 ########################
 .ipynb_checkpoints
+cnn_model/keras_trial_with_2235.h5
